@@ -21,10 +21,10 @@ jqnpm install joelpurra/jq-stress
 import "joelpurra/jq-stress" as Stress;
 
 # Stress::remove(str)
-"Hello World!" | remove(" World!")                # "Hello"
+"Hello World!" | Stress::remove(" World!")                # "Hello"
 
 # Stress::replace(str; replacement)
-"Hello World!" | replace("World"; "Beautiful")    # "Hello Beautiful!"
+"Hello World!" | Stress::replace("World"; "Beautiful")    # "Hello Beautiful!"
 ```
 
 
