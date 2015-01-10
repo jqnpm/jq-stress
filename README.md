@@ -25,7 +25,16 @@ import "joelpurra/jq-stress" as Stress;
 
 # Stress::replace(str; replacement)
 "Hello World!" | Stress::replace("World"; "Beautiful")    # "Hello Beautiful!"
+
+# Stress::reverse
+# Note: does not, just like 'jq', take Unicode combining marks and astral symbols into account.
+"Hello World!" | Stress::reverse    # "!dlroW olleH"
 ```
+
+
+## Todo
+
+- Fix Unicode combining marks and astral symbols reversing with code from Mathias Bynen's [`esrever`](https://github.com/mathiasbynens/esrever).
 
 
 

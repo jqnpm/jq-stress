@@ -4,3 +4,10 @@ def replace(a; b):
 
 def remove(a):
 	replace(a; "");
+
+# The name was chosen because 'reverse' is a jq builtin.
+# Also, https://github.com/mathiasbynens/esrever seems to do the right thing and is inspiring.
+def esrever:
+	explode
+	| reverse
+	| implode;
