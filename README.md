@@ -64,7 +64,7 @@ null | Stress::isNullOrWhitespace("omg") # "omg"
 
 ## Todo
 
-- Fix Unicode combining marks and astral symbols reversing with code from Mathias Bynen's [`esrever`](https://github.com/mathiasbynens/esrever).
+- Fix Unicode combining marks and astral symbols reversing with code from Mathias Bynens' [`esrever`](https://github.com/mathiasbynens/esrever).
 
 
 
