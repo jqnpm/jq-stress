@@ -29,6 +29,36 @@ import "joelpurra/jq-stress" as Stress;
 # Stress::reverse
 # Note: does not, just like 'jq', take Unicode combining marks and astral symbols into account.
 "Hello World!" | Stress::reverse    # "!dlroW olleH"
+
+Stress::isEmpty
+"" | Stress::isEmpty # true
+"a" | Stress::isEmpty # false
+
+Stress::isEmpty(fallback)
+"" | Stress::isEmpty("omg") # "omg"
+"a" | Stress::isEmpty("omg") # "a"
+
+Stress::isNullOrEmpty
+null | Stress::isNullOrEmpty # true
+"" | Stress::isNullOrEmpty # true
+"a" | Stress::isNullOrEmpty # false
+
+Stress::isNullOrEmpty(fallback)
+null | Stress::isNullOrEmpty("omg") # "omg"
+"" | Stress::isNullOrEmpty("omg") # "omg"
+"a" | Stress::isNullOrEmpty("omg") # "a"
+
+Stress::isNullOrWhitespace
+null | Stress::isNullOrWhitespace # true
+"" | Stress::isNullOrWhitespace # true
+" \\\\u0009\\\\u000B" | Stress::isNullOrWhitespace # true
+"a" | Stress::isNullOrWhitespace # false
+
+Stress::isNullOrWhitespace(fallback)
+null | Stress::isNullOrWhitespace("omg") # "omg"
+"" | Stress::isNullOrWhitespace("omg") # "omg"
+" \\\\u0009\\\\u000B" | Stress::isNullOrWhitespace("omg") # "omg"
+"a" | Stress::isNullOrWhitespace("omg") # "a"
 ```
 
 

@@ -1,6 +1,6 @@
 {
     "name": "stress",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Manipulate strings without stress.",
     "homepage": "https://github.com/joelpurra/jq-stress",
     "bugs": "https://github.com/joelpurra/jq-stress/issues",

@@ -11,3 +11,35 @@ def esrever:
 	explode
 	| reverse
 	| implode;
+
+def isEmpty:
+	. == "";
+
+def isEmpty(fallback):
+	if isEmpty then
+		fallback
+	else
+		.
+	end;
+
+def isNullOrEmpty:
+	type == "null"
+	or isEmpty;
+
+def isNullOrEmpty(fallback):
+	if isNullOrEmpty then
+		fallback
+	else
+		.
+	end;
+
+def isNullOrWhitespace:
+	isNullOrEmpty
+	or test("^\\s+$");
+
+def isNullOrWhitespace(fallback):
+	if isNullOrWhitespace then
+		fallback
+	else
+		.
+	end;
