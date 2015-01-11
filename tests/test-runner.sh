@@ -17,14 +17,14 @@ function runAllFourLineTests () {
 		read code
 		read expected
 
-		local expectedFormatted=$(echo "$expected" | jq '.')
-
-		local output=$(echo "$input" | jq -f <(echo "$code" | cat "$fileUnderTest" -))
-
 		echo -ne "$COLOR_WHITE"
 		echo -nE "$title"
 		echo -ne "$COLOR_NO_COLOR"
 		echo -E ": $description"
+
+		local expectedFormatted=$(echo "$expected" | jq '.')
+
+		local output=$(echo "$input" | jq -f <(echo "$code" | cat "$fileUnderTest" -))
 
 		assertEquals "${title}: ${description}" "$expectedFormatted" "$output"
 
